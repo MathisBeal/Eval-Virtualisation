@@ -1,0 +1,11 @@
+services:
+  web_app:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    container_name: web_app_c
+    restart: always
+    volumes:
+      - ./for_volume:/usr/share/nginx/html
+    ports:
+      - "80:80"

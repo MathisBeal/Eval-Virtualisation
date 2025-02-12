@@ -1,0 +1,10 @@
+FROM nginx:alpine
+
+## Update packages
+RUN apk update
+
+## Set the work dir
+WORKDIR /var/www/html
+
+## Expose port
+EXPOSE 80

@@ -1,6 +1,6 @@
 services:
   webserver:
-    # image: my_custom_image
+    # To directly build the image from the dockerfile, not have to build it separately
     build: 
       context: .
       dockerfile: dockerfile
