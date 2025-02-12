@@ -1,0 +1,32 @@
+services:
+  webserver:
+    # image: my_custom_image
+    build: 
+      context: .
+      dockerfile: dockerfile
+    container_name: webserver_c
+    restart: always
+    depends_on:
+      - redis
+    networks:
+      - my_network
+    ports:
+      - "80:5000"
+
+  redis:
+    image: redis:alpine
+    container_name: redis_c
+    restart: always
+    volumes:
+      - redis_data:/data
+    networks:
+      - my_network
+    ports:
+      - "6379:6379"
+
+volumes:
+  redis_data:
+
+networks:
+  my_network:
+    driver: bridge
