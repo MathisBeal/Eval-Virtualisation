@@ -1,7 +1,5 @@
 FROM python:3.9-alpine
 
-LABEL version="1.0"
-
 ## Set work dir
 WORKDIR /app
 
@@ -18,7 +16,3 @@ EXPOSE 5000
 ## Runnig app
 COPY app.py ./
 CMD [ "python", "app.py" ]
-
-## Also copy index.html
-## Not sure were to add it
-# COPY index.html /
